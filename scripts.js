@@ -1,18 +1,14 @@
 const toggle = document.getElementById("forgeToggle");
-
 const canvas = document.getElementById("embers");
 const ctx = canvas.getContext("2d");
-
 const sparkCanvas = document.getElementById("sparks");
 const sparkCtx = sparkCanvas.getContext("2d");
-
 const fireCanvas = document.getElementById("forgeFire");
 const fireCtx = fireCanvas.getContext("2d");
 
 let particles = [];
 let sparkParticles = [];
 let flames = [];
-
 let fireActive = true;
 
 function resizeCanvas(){
@@ -30,8 +26,7 @@ resizeCanvas();
 window.addEventListener("resize", resizeCanvas);
 
 
-/* EMBERS */
-
+// EMBERS
 class Ember{
     constructor(){
         this.reset();
@@ -69,8 +64,7 @@ for(let i=0;i<60;i++){
 }
 
 
-/* FLAMES */
-
+// FLAMES
 class Flame{
     constructor(){
         this.reset();
@@ -106,8 +100,7 @@ for(let i=0;i<120;i++){
 }
 
 
-/* SPARKS */
-
+// SPARKS
 class Spark{
     constructor(x,y){
         this.x = x;
@@ -133,8 +126,7 @@ class Spark{
 }
 
 
-/* CLICK SPARKS */
-
+// CLICK SPARKS
 window.addEventListener("click",(e)=>{
     for(let i=0;i<25;i++){
         sparkParticles.push(new Spark(e.clientX,e.clientY));
@@ -142,16 +134,13 @@ window.addEventListener("click",(e)=>{
 });
 
 
-/* ANIMATIONS */
-
+// ANIMATIONS
 function animate(){
-
     ctx.clearRect(0,0,canvas.width,canvas.height);
     fireCtx.clearRect(0,0,fireCanvas.width,fireCanvas.height);
     sparkCtx.clearRect(0,0,sparkCanvas.width,sparkCanvas.height);
 
     if(fireActive){
-
         particles.forEach(p=>{
             p.update();
             p.draw();
@@ -161,7 +150,6 @@ function animate(){
             f.update();
             f.draw();
         });
-
     }
 
     sparkParticles = sparkParticles.filter(s=>{
@@ -175,31 +163,21 @@ function animate(){
 
 animate();
 
-
-/* DARK MODE */
-
+// DARK MODE
 toggle.onclick = ()=>{
     document.body.classList.toggle("dark-mode");
     fireActive = !document.body.classList.contains("dark-mode");
     toggle.textContent = fireActive ? "🔥" : "⚫";
 };
 
-
-/* SCROLL SWORD */
-
+// SWORD SCROLL BAR
 const sword = document.getElementById("scrollSword");
 
 function updateSwordScroll(){
-
     const scrollTop = window.scrollY;
-
-    const docHeight =
-    document.documentElement.scrollHeight - window.innerHeight;
-
+    const docHeight = document.documentElement.scrollHeight - window.innerHeight;
     const percent = docHeight>0 ? scrollTop/docHeight : 0;
-
     const trackHeight = window.innerHeight - 120;
-
     const position = percent*trackHeight;
 
     sword.style.transform =
@@ -209,19 +187,14 @@ function updateSwordScroll(){
 window.addEventListener("scroll", updateSwordScroll);
 updateSwordScroll();
 
-
-/* DRAG SCROLL */
-
+// Scroll on Drag
 sword.addEventListener("mousedown",()=>{
-
     function move(event){
-
         const percent = event.clientY/window.innerHeight;
 
         window.scrollTo({
             top: percent*(document.body.scrollHeight-window.innerHeight)
         });
-
     }
 
     window.addEventListener("mousemove",move);
@@ -229,5 +202,13 @@ sword.addEventListener("mousedown",()=>{
     window.addEventListener("mouseup",()=>{
         window.removeEventListener("mousemove",move);
     },{once:true});
+});
 
+// BURGER MENU FOR MOBILE
+const burger = document.getElementById("burger");
+const navMenu = document.getElementById("navMenu");
+
+burger.addEventListener("click", ()=>{
+    navMenu.classList.toggle("active");
+    burger.classList.toggle("active");
 });
