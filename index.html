@@ -9,14 +9,16 @@
     </head>
 
     <body>
+        <!-- PARTICLE CANVASES -->
         <canvas id="embers"></canvas>
         <canvas id="sparks"></canvas>
         <canvas id="forgeFire"></canvas>
 
+        <!-- NAVBAR -->
         <header class="navbar">
             <div class="nav-left">
-                <img src="images/logo.png" class="logo">
-                <h1 class="site-name">Reforge</h1>
+                <img src="images/logo.png" class="logo" alt="Reforge Logo">
+                <p class="site-name">Reforge</p>
             </div>
 
             <nav class="nav-buttons">
@@ -27,16 +29,11 @@
             </nav>
         </header>
 
+        <!-- HERO -->
         <section class="hero">
-                <div class="blacksmith">
-                    <img src="images/blacksmith.png" id="smith">
-                    <img src="images/hammer.png" id="hammer">
-                </div>
-
-                <div class="hero-content">
-                    <h1 class="project-title">Reforge</h1>
-                    <p class="subtitle">The YSWS for making projects out trash.</p>
-                </div>
+            <div class="hero-content">
+                <h1 class="project-title">Reforge</h1>
+                <p class="subtitle">The YSWS for making projects out of trash.</p>
 
                 <div class="labels">
                     <span>Recycling</span>
@@ -46,65 +43,72 @@
                 </div>
 
                 <div class="hero-buttons">
-                    <button>RSVP</button>
-                    <button>Learn More</button>
+                    <a href="#">RSVP</a>
+                    <a href="#">Learn More</a>
                 </div>
             </div>
         </section>
 
+        <!-- PROCESS -->
         <section class="process">
             <h2 class="process-title">The Process</h2>
 
             <div class="process-grid">
                 <div class="process-card">
-                    <img src="images/furnace.png">
+                    <img src="images/furnace.png" alt="Smithy Furnace">
                     <h3>Heating the Furnace</h3>
-                    <p>Set Up Hack Club Lapse, Hackatime, & Github.</p>
+                    <p>Set up Hack Club Lapse, Hackatime, and GitHub.</p>
                 </div>
 
                 <div class="process-card">
-                    <img src="images/hammer.png">
+                    <img src="images/elder.png" alt="Elder Blacksmith">
                     <h3>Re-Forge</h3>
-                    <p>Take Your Components & Create Something New. Document the Process.</p>
+                    <p>Take your components and create something new. Document the process.</p>
                 </div>
 
                 <div class="process-card">
-                    <img src="images/quench.png">
+                    <img src="images/quench.png" alt="Quenching Metal">
                     <h3>Refine</h3>
-                    <p>Debug & Prepare to Ship</p>
+                    <p>Debug and prepare to ship.</p>
                 </div>
             </div>
         </section>
 
+        <!-- FOOTER -->
         <footer>
             <div class="footer-top">
-                <img src="images/partner-logo.png" class="partner-logo">
-                <p>By Teens, For Teens. Reforge is ysws (you ship, we ship) by Ananta, a Hack Clubber, and is supported by Hack Club, a global nonprofit network of high school coding clubs. Reforge is open source and free for anyone to use and modify.</p>
+                <img src="images/partner-logo.png" class="partner-logo" alt="Hack Club Logo">
+
+                <p>
+                By teens, for teens. Reforge is a YSWS (You Ship, We Ship) created by
+                Ananta, a Hack Clubber, and supported by Hack Club — a global nonprofit
+                network of high school coding clubs.
+                </p>
             </div>
 
             <div class="footer-links">
-                <a href="https://hackclub.com/conduct/">Code of Contact</a>
+                <a href="https://hackclub.com/conduct/">Code of Conduct</a>
                 <a href="https://hackclub.com">Hack Club</a>
                 <a href="https://hackclub.com/privacy/">Privacy Policy</a>
                 <a href="https://github.com/dev-ananta/reforge-ysws">GitHub</a>
             </div>
-
-            <div class="scroll-scabbard">
-                <img src="images/scabbard.png">
-            </div>
         </footer>
 
+        <!-- DARK MODE TOGGLE -->
         <button id="forgeToggle">🔥</button>
 
-        <script src="scripts.js"></script>
-
+        <!-- CUSTOM SWORD SCROLLBAR -->
         <div id="swordScroll">
-            <img src="images/sword-scroll.png" id="scrollSword">
-            <div id="scrollTrack"></div>
+            <img src="images/sword-scroll.png"
+            id="scrollSword"
+            alt="Scrolling Sword">
         </div>
 
         <div id="scrollScabbard">
-            <img src="images/scabbard.png">
+            <img src="images/scabbard.png" alt="Sword Scabbard">
         </div>
+
+        <!-- SCRIPT -->
+        <script src="scripts.js" defer></script>
     </body>
 </html>
