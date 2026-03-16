@@ -51,7 +51,8 @@ body::-webkit-scrollbar{
 .nav-buttons a{
     color:white;
     text-decoration:none;
-    margin-left:20px;
+    margin-left: 15px;
+    margin-right:-10px;
     padding:8px 15px;
     background:#ff4d4d;
     border-radius:4px;
@@ -124,21 +125,50 @@ content:"";
     font-weight:bold;
 }
 
-.hero-buttons button{
-    padding:12px 25px;
-    margin:8px;
+.hero-buttons{
+    display:flex;
+    justify-content:center;
+    gap:16px;
+}
+
+.hero-btn{
+    padding:12px 26px;
     border:none;
-    background:#7bd45a;
+    border-radius:5px;
     cursor:pointer;
     font-weight:bold;
-    border-radius:4px;
+    font-size:15px;
     transition:.25s;
 }
 
-.hero-buttons button:hover{
+/* (RSVP Button) */
+
+.rsvp-btn{
+    background:#7bd45a;
+    color:#111;
+}
+
+.rsvp-btn:hover{
     background:#65c448;
 }
 
+/* (Learn More Button) */
+
+.learn-btn{
+    background:#3c6df0;
+    color:white;
+}
+
+.learn-btn:hover{
+    background:#2e57cc;
+}
+
+/* (Hover Glow) */
+
+.hero-btn:hover{
+    box-shadow:0 0 10px rgba(255,120,0,.6);
+    transform:translateY(-2px);
+}
 
 /* PROCESS SECTION */
 
@@ -245,7 +275,7 @@ footer{
 #forgeToggle{
     position:fixed;
     bottom:25px;
-    right:25px;
+    left:25px;
     width:55px;
     height:55px;
     font-size:26px;
@@ -288,7 +318,7 @@ footer{
 
 #swordScroll{
     position:fixed;
-    right:20px;
+    right:19px;
     top:0;
     height:100%;
     width:40px;
