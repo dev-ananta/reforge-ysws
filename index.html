@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Forge Project</title>
+        <link rel="stylesheet" href="styles.css">
+    </head>
+
+    <body>
+        <canvas id="embers"></canvas>
+        <canvas id="sparks"></canvas>
+        <canvas id="forgeFire"></canvas>
+
+        <header class="navbar">
+            <div class="nav-left">
+                <img src="images/logo.png" class="logo">
+                <h1 class="site-name">ForgeCraft</h1>
+            </div>
+
+            <nav class="nav-buttons">
+                <a href="#">Home</a>
+                <a href="#">Process</a>
+                <a href="#">Gallery</a>
+                <a href="#">About</a>
+            </nav>
+        </header>
+
+        <section class="hero">
+                <div class="blacksmith">
+                    <img src="images/blacksmith.png" id="smith">
+                    <img src="images/hammer.png" id="hammer">
+                </div>
+
+                <div class="hero-content">
+                    <h1 class="project-title">The Art of Forging</h1>
+                    <p class="subtitle">A step-by-step exploration of blade crafting.</p>
+                </div>
+
+                <div class="labels">
+                    <span>Blacksmithing</span>
+                    <span>Forging</span>
+                    <span>Metalwork</span>
+                    <span>Engineering</span>
+                </div>
+
+                <div class="hero-buttons">
+                    <button>View Project</button>
+                    <button>Learn More</button>
+                </div>
+            </div>
+        </section>
+
+        <section class="process">
+            <h2 class="process-title">The Process</h2>
+
+            <div class="process-grid">
+                <div class="process-card">
+                    <img src="images/furnace.png">
+                    <h3>Heat</h3>
+                    <p>The metal is heated in a furnace until it becomes malleable.</p>
+                </div>
+
+                <div class="process-card">
+                    <img src="images/hammer.png">
+                    <h3>Shape</h3>
+                    <p>The heated metal is hammered and shaped on the anvil.</p>
+                </div>
+
+                <div class="process-card">
+                    <img src="images/quench.png">
+                    <h3>Quench</h3>
+                    <p>The blade is cooled rapidly to strengthen the steel.</p>
+                </div>
+            </div>
+        </section>
+
+        <footer>
+            <div class="footer-top">
+                <img src="images/partner-logo.png" class="partner-logo">
+                <p>
+                Project created in collaboration with educational partners and
+                metalworking communities.
+                </p>
+            </div>
+
+            <div class="footer-links">
+                <a href="#">Contact</a>
+                <a href="#">Documentation</a>
+                <a href="#">Github</a>
+                <a href="#">License</a>
+            </div>
+        </footer>
+
+        <button id="forgeToggle">🔥</button>
+
+        <script src="scripts.js"></script>
+
+    </body>
+</html>
