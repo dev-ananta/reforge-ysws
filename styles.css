@@ -29,7 +29,7 @@ body::-webkit-scrollbar{
     display:flex;
     justify-content:space-between;
     align-items:center;
-    padding:15px 40px;
+    padding:15px 90px 15px 40px;
     background:black;
     color:white;
     box-shadow:0 4px 10px rgba(0,0,0,.6);
@@ -51,18 +51,17 @@ body::-webkit-scrollbar{
 .nav-buttons a{
     color:white;
     text-decoration:none;
-    margin-left: 15px;
-    margin-right:-10px;
+    margin-left:12px;
     padding:8px 15px;
-    background:#ff4d4d;
+    background:transparent;
     border-radius:4px;
-    transition:.25s;
+    transition:background .25s,color .25s;
 }
 
 .nav-buttons a:hover{
-    background:#ff2a2a;
+    background:#ff4d4d;
+    box-shadow:0 0 8px rgba(255,80,0,.6);
 }
-
 
 /* HERO SECTION */
 
@@ -103,21 +102,22 @@ content:"";
 
 .project-title{
     font-size:52px;
-    color:#2d1aff;
+    color:#ffffff;
     margin-bottom:10px;
 }
 
 .subtitle{
-    color:#caa6ff;
+    color:#8e8e8e;
     margin-bottom:20px;
 }
 
 .labels{
     margin-bottom:20px;
+    color: white;
 }
 
 .labels span{
-    background:#ffd54a;
+    background:#f6a53b;
     padding:6px 14px;
     margin:4px;
     display:inline-block;
@@ -144,23 +144,23 @@ content:"";
 /* (RSVP Button) */
 
 .rsvp-btn{
-    background:#7bd45a;
-    color:#111;
+    background:#f6a53b;
+    color:white;
 }
 
 .rsvp-btn:hover{
-    background:#65c448;
+    background:#f9a436;
 }
 
 /* (Learn More Button) */
 
 .learn-btn{
-    background:#3c6df0;
+    background:#f6a53b;
     color:white;
 }
 
 .learn-btn:hover{
-    background:#2e57cc;
+    background:#f9a436;
 }
 
 /* (Hover Glow) */
@@ -318,7 +318,7 @@ footer{
 
 #swordScroll{
     position:fixed;
-    right:19px;
+    right:18px;
     top:0;
     height:100%;
     width:40px;
