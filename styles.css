@@ -178,7 +178,6 @@ footer{
     cursor:pointer;
 }
 
-
 /* CUSTOM SCROLLBAR */
 
 ::-webkit-scrollbar{
@@ -186,11 +185,12 @@ footer{
 }
 
 ::-webkit-scrollbar-track{
-    background:#444;
+    background:#2b2b2b;
 }
 
 ::-webkit-scrollbar-thumb{
-    background:url("images/sword-scroll.png") center/contain no-repeat;
+    background:url("images/sword-scroll.png") center no-repeat;
+    background-size:contain;
 }
 
 #embers{
@@ -347,3 +347,90 @@ footer,
 100%{transform:rotate(0deg)}
 
 }
+
+.scroll-scabbard{
+    position:fixed;
+    bottom:0;
+    right:2px;
+
+    pointer-events:none;
+    z-index:5;
+}
+
+.scroll-scabbard img{
+    height:120px;
+}
+
+/* HIDE NATIVE SCROLLBAR */
+
+body{
+    overflow-y:scroll;
+    scrollbar-width:none; /* Firefox */
+}
+
+body::-webkit-scrollbar{
+    display:none; /* Chrome / Edge / Safari */
+}
+
+/* SCROLL CONTAINER */
+
+#swordScroll{
+position:fixed;
+right:20px;
+top:0;
+
+height:100vh;
+width:40px;
+
+display:flex;
+justify-content:center;
+
+pointer-events:none;
+z-index:20;
+}
+
+/* TRACK */
+
+#scrollTrack{
+position:absolute;
+top:0;
+height:100%;
+width:6px;
+
+background:rgba(0,0,0,0.25);
+border-radius:10px;
+}
+
+/* SWORD */
+
+#scrollSword{
+position:absolute;
+
+width:35px;
+
+top:0;
+left:50%;
+transform:translateX(-50%);
+
+pointer-events:auto;
+cursor:pointer;
+
+transition:
+transform 0.1s linear;
+}
+
+/* SCABBARD */
+
+#scrollScabbard{
+position:fixed;
+right:10px;
+bottom:0;
+
+pointer-events:none;
+z-index:21;
+}
+
+#scrollScabbard img{
+height:140px;
+}
+

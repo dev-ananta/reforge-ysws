@@ -194,3 +194,36 @@ function animateSparks(){
 }
 
 animateSparks();
+
+const sword = document.getElementById("scrollSword");
+
+function updateSwordScroll(){
+    const scrollTop = window.scrollY;
+    const docHeight = document.documentElement.scrollHeight - window.innerHeight;
+    const percent = scrollTop / docHeight;
+    const trackHeight = window.innerHeight - 120;
+    const position = percent * trackHeight;
+
+    sword.style.transform =
+    `translate(-50%, ${position}px)`;
+}
+
+window.addEventListener("scroll", updateSwordScroll);
+
+updateSwordScroll();
+
+sword.addEventListener("mousedown",(e)=>{
+    function move(event){
+        const percent = event.clientY / window.innerHeight;
+
+        window.scrollTo({
+            top: percent * (document.body.scrollHeight - window.innerHeight)
+        });
+    }
+
+    window.addEventListener("mousemove",move);
+
+    window.addEventListener("mouseup",()=>{
+        window.removeEventListener("mousemove",move);
+    },{once:true});
+});
