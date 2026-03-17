@@ -1,21 +1,55 @@
 /* FONT */
-/* 1. Define the font name and path */
+
+/* Firlest
 @font-face {
     font-family: 'Firlest';
-    src: url('fonts/Firlest-Regular.otf') format('woff'), /* Best for web performance */
-         url('fonts/Firlest-Regular.ttf') format('truetype'); /* Fallback */
+    src: url('fonts/Firlest-Regular.otf') format('woff'),
+         url('fonts/Firlest-Regular.ttf') format('truetype');
     font-weight: normal;
     font-style: normal;
 }
 
-/* 2. Apply it to specific elements */
 h1 {
-    font-family: 'Firlest', serif; /* 'serif' is a fallback if the font fails to load */
+    font-family: 'Firlest', serif;
     font-size: 3rem;
 }
 
 .medieval-text {
     font-family: 'Firlest';
+} */
+
+@font-face {
+  font-family: 'Phantom Sans';
+  src:
+    url('https://assets.hackclub.com/fonts/Phantom_Sans_0.7/Regular.woff')
+      format('woff'),
+    url('https://assets.hackclub.com/fonts/Phantom_Sans_0.7/Regular.woff2')
+      format('woff2');
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: 'Phantom Sans';
+  src:
+    url('https://assets.hackclub.com/fonts/Phantom_Sans_0.7/Italic.woff')
+      format('woff'),
+    url('https://assets.hackclub.com/fonts/Phantom_Sans_0.7/Italic.woff2')
+      format('woff2');
+  font-weight: normal;
+  font-style: italic;
+  font-display: swap;
+}
+@font-face {
+  font-family: 'Phantom Sans';
+  src:
+    url('https://assets.hackclub.com/fonts/Phantom_Sans_0.7/Bold.woff')
+      format('woff'),
+    url('https://assets.hackclub.com/fonts/Phantom_Sans_0.7/Bold.woff2')
+      format('woff2');
+  font-weight: bold;
+  font-style: normal;
+  font-display: swap;
 }
 
 /* GLOBAL RESET */
@@ -23,7 +57,7 @@ h1 {
     margin:0;
     padding:0;
     box-sizing:border-box;
-    font-family: 'Firlest', Arial, Helvetica, sans-serif;
+    font-family: 'Phantom Sans', Arial, Helvetica, sans-serif;
 }
 
 body{
