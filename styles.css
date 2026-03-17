@@ -1,9 +1,29 @@
+/* FONT */
+/* 1. Define the font name and path */
+@font-face {
+    font-family: 'Firlest';
+    src: url('fonts/Firlest-Regular.otf') format('woff'), /* Best for web performance */
+         url('fonts/Firlest-Regular.ttf') format('truetype'); /* Fallback */
+    font-weight: normal;
+    font-style: normal;
+}
+
+/* 2. Apply it to specific elements */
+h1 {
+    font-family: 'Firlest', serif; /* 'serif' is a fallback if the font fails to load */
+    font-size: 3rem;
+}
+
+.medieval-text {
+    font-family: 'Firlest';
+}
+
 /* GLOBAL RESET */
 *{
     margin:0;
     padding:0;
     box-sizing:border-box;
-    font-family: 'Inter', Arial, Helvetica, sans-serif;
+    font-family: 'Firlest', Arial, Helvetica, sans-serif;
 }
 
 body{
