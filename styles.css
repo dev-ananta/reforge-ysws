@@ -291,6 +291,18 @@ footer{
     background:#ffffff10;
 }
 
+.dark-mode .labels {
+    color: black;
+}
+
+.dark-mode .rsvp-btn{
+    color: black;
+}
+
+.dark-mode .learn-btn{
+    color: black;
+}
+
 
 /* FIRE TOGGLE BUTTON */
 
