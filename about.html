@@ -1,44 +1,21 @@
 <!DOCTYPE html>
 
-<!-- The Process of the YSWS. Go into detail on YS & WS. -->
-
 <html lang="en">
     <head>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>About</title>
-        <!-- Vercel Web Analytics -->
-        <script defer src="https://cdn.vercel-insights.com/v1/script.js"></script>
-        <!-- Vercel Speed Insights -->
-        <script>
-            window.si = window.si || function () { (window.siq = window.siq || []).push(arguments); };
-        </script>
-        <script defer src="/_vercel/speed-insights/script.js"></script>
-        <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
-        <link href="styles.css" rel="stylesheet">
+        <title>About - Reforge</title>
+        <link rel="stylesheet" href="styles.css">
     </head>
 
     <body>
-        <!-- PARTICLE CANVASES -->
-        <canvas id="embers"></canvas>
-        <canvas id="sparks"></canvas>
-        <canvas id="forgeFire"></canvas>
-
-        <!-- NAVBAR -->
         <header class="navbar">
             <div class="nav-left">
-                <img src="images/logo.png" class="logo" alt="Reforge logo">
-                <p class="site-name">Reforge</p>
+                <img src="images/logo.png" class="logo">
+                <h1 class="site-name">Reforge</h1>
             </div>
 
-            <!-- BURGER MENU FOR MOBILE -->
-            <div class="burger" id="burger">
-                <span></span>
-                <span></span>
-                <span></span>
-            </div>
-
-            <nav class="nav-buttons" id="navMenu">
+            <nav class="nav-buttons">
                 <a href="index.html">Home</a>
                 <a href="dashboard.html">Dashboard</a>
                 <a href="about.html">About</a>
@@ -46,30 +23,103 @@
             </nav>
         </header>
 
-        <!-- HERO -->
-        <section class="hero">
-            <div class="hero-content">
-                <h1 class="project-title">Error 404</h1>
-                <p class="subtitle">Please Come Back Later, This Webpage Is In Development.</p>
+        <!-- HOW IT WORKS -->
+        <section class="about-section">
+            <h1>How It Works</h1>
 
-                <div class="labels">
-                    <span>ERROR</span>
-                    <span>ERROR</span>
-                    <span>ERROR</span>
-                    <span>ERROR</span>
+            <div class="forge-steps">
+                <div class="row row-top">
+                    <div class="forge-step">
+                        <div class="pin"></div>
+                        <h2>01 BUILD</h2>
+                        <p>Make something software or hardware. You cannot follow guides/tutorials. Build something YOU care about.</p>
+                    </div>
+
+                    <div class="forge-step">
+                        <div class="pin"></div>
+                        <h2>02 DOCUMENT</h2>
+                        <p>Write a markdown guide. Keep it simple/beginner-friendly. Someone else needs to replicate it from scratch.</p>
+                    </div>
+
+                    <div class="forge-step">
+                        <div class="pin"></div>
+                        <h2>03 SUBMIT</h2>
+                        <p>Ship the repo and the guide. We review it.</p>
+                    </div>
+                </div>
+
+                <div class="row row-bottom">
+                    <div class="forge-step">
+                        <div class="pin"></div>
+                        <h2>04 EARN</h2>
+                        <p>Get paid for your time. 25 paper/hour.</p>
+                    </div>
+
+                    <div class="forge-step">
+                        <div class="pin"></div>
+                        <h2>05 SPEND</h2>
+                        <p>SPEND YOUR COINSSS IN SHOP!!</p>
+                    </div>
                 </div>
             </div>
         </section>
 
-        <!-- FOOTER -->
+        <!-- WHAT COUNTS -->
+        <section class="about-section">
+            <h1>What Counts</h1>
+            <div class="counts-grid">
+                <div class="count-card">
+                    <h2>[ SOFTWARE ]</h2>
+                    <p>
+                        Build an app, a game, a website, or a CLI tool.
+                    </p>
+                    <p>
+                        Tracked via Hackatime = coding time + writing time.
+                    </p>
+                </div>
+                <div class="count-card">
+                    <h2>[ HARDWARE ]</h2>
+                    <p>
+                        Build a dev-board, a quantum computer, or a 3D printer.
+                        Must be a physical project.
+                    </p>
+                    <p>
+                        Tracked via Hackatime & Lapse = design time + build time + writing the guide.
+                    </p>
+                </div>
+            </div>
+        </section>
+
+        <!-- REVIEW PROCESS -->
+        <section class="about-section">
+            <h1>Review Process</h1>
+            <div class="review">
+                <div class="review-stage">
+                    <h2>STAGE 1 — THE BASICS</h2>
+                    <p>
+                        Is the format correct? Did you actually write a guide?
+                        Other standard checks happen here.
+                    </p>
+                </div>
+                <div class="arrow"></div>
+                <div class="review-stage">
+                    <h2>STAGE 2 — REPRODUCIBILITY</h2>
+                    <p>
+                        Is your guide actually helpful for a beginner?
+                        If yes, you earn coins.
+                    </p>
+                </div>
+            </div>
+        </section>
+
         <footer>
             <div class="footer-top">
-                <img src="images/partner-logo.png" class="partner-logo" alt="Hack Club Logo">
+                <img src="images/partner-logo.png" class="partner-logo">
 
                 <p>
-                By teens, for teens. Reforge is a YSWS (You Ship, We Ship) created by
-                Ananta, a Hack Clubber, and supported by Hack Club — a global nonprofit
-                network of high school coding clubs.
+                By Teens, For Teens. Reforge is a YSWS by Ananta,
+                supported by Hack Club, a global nonprofit network
+                of high school coding clubs.
                 </p>
             </div>
 
@@ -94,8 +144,8 @@
         <div id="scrollScabbard">
             <img src="images/scabbard.png" alt="Sword Scabbard">
         </div>
-
+        
         <!-- SCRIPT -->
-        <script src="scripts.js" defer></script>
+        <script src="scripts.js"></script>
     </body>
 </html>
