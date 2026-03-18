@@ -84,10 +84,9 @@ body::-webkit-scrollbar{display:none;}
 }
 /* [About - Dark Mode] */
 .dark-mode .forge-step{background:#151515;color:white;}
-.dark-mode .count-card{background:#0f0f0f;}
 .dark-mode .review-stage{background:#111;}
 .dark-mode .count-card{
-    background:linear-gradient(145deg,#111,#1c1c1c);
+    background:linear-gradient(145deg,#111,#0f0f0f);
     color:white;
 }
 /* (Image Handling) */
@@ -369,17 +368,6 @@ footer{
 }
 /* Dashboard Page - N/A (Currently Uses Landing & Buttons from Index Page)*/
 /* About Page */
-.about-section{
-    padding: 80px 10%;
-    max-width:1100px;
-    margin:auto;
-    text-align:center;
-}
-.about-section h1 {
-    font-size: 2.5rem;
-    margin-bottom: 50px;
-    text-align: center;
-}
 .forge-steps,
 .counts-grid,
 .review {
@@ -389,21 +377,58 @@ footer{
 .forge-step,
 .count-card,
 .review-stage {
+    background: rgba(20,20,20,0.85);
+    color: white;
+    backdrop-filter: blur(6px);
     padding: 25px;
-}
-.forge-step,
-.count-card,
-.review-stage {
-    border-radius: 16px;
-    background: rgba(255,255,255,0.05);
-    backdrop-filter: blur(10px);
-    transition: transform 0.2s ease;
+    border: 1px solid rgba(255,140,0,0.4);
+    box-shadow: 0 0 20px rgba(0,0,0,0.5);
 }
 .forge-step:hover,
 .count-card:hover {
     transform: translateY(-5px);
 }
+.section-bg {
+    position: relative;
+    overflow: hidden;
+}
+.section-bg::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: rgba(0,0,0,0.6); /* darkness overlay */
+    z-index: 0;
+}
+.section-bg > * {
+    position: relative;
+    z-index: 1;
+}
 /* (How It Works) */
+.how_it_works-section h1 {
+    font-size: 2.5rem;
+    margin-bottom: 30px;
+    text-align: center;
+}
+.how_it_works-section{
+    padding: 80px 10%;
+    margin: auto;
+    display:flex;
+    align-items:center;
+    text-align:center;
+    position:relative;
+    flex-direction:column;
+
+    background:url("images/alley.png") center/cover no-repeat;
+}
+.how_it_works-section::before{
+    content:"";
+    position:absolute;
+    inset:0;
+}
+.how_it_works-section > *{
+    position:relative;
+    z-index:1;
+}
 .forge-steps{
     display:flex;
     flex-direction:column;
@@ -455,6 +480,31 @@ footer{
     border-radius:50%;
 }
 /* (What Counts) */
+.counts-section h1 {
+    font-size: 2.5rem;
+    margin-bottom: 30px;
+    text-align: center;
+}
+.counts-section{
+    padding: 80px 10%;
+    margin: auto;
+    display:flex;
+    align-items:center;
+    text-align:center;
+    position:relative;
+    flex-direction:column;
+
+    background:url("images/storage.png") center/cover no-repeat;
+}
+.counts-section::before{
+    content:"";
+    position:absolute;
+    inset:0;
+}
+.counts-section > *{
+    position:relative;
+    z-index:1;
+}
 .counts-grid{
     display:grid;
     grid-template-columns:repeat(2,1fr);
@@ -474,6 +524,31 @@ footer{
     box-shadow:0 0 20px rgba(255,120,0,0.3);
 }
 /* (Review Process) */
+.review-section h1 {
+    font-size: 2.5rem;
+    margin-bottom: 30px;
+    text-align: center;
+}
+.review-section{
+    padding: 80px 10%;
+    margin: auto;
+    display:flex;
+    align-items:center;
+    text-align:center;
+    position:relative;
+    flex-direction:column;
+
+    background:url("images/gems.png") center/cover no-repeat;
+}
+.review-section::before{
+    content:"";
+    position:absolute;
+    inset:0;
+}
+.review-section > *{
+    position:relative;
+    z-index:1;
+}
 .review {
     display: flex;
     flex-direction: column;
