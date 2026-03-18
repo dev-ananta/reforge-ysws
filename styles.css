@@ -89,6 +89,34 @@ body::-webkit-scrollbar{display:none;}
     background:linear-gradient(145deg,#111,#0f0f0f);
     color:white;
 }
+/* Keep about page h1 headings white in both light and dark mode */
+.how_it_works-section h1,
+.counts-section h1,
+.review-section h1 {
+    color: #fff;
+}
+.dark-mode .how_it_works-section h1,
+.dark-mode .counts-section h1,
+.dark-mode .review-section h1 {
+    color: #fff;
+}
+/* Keep about page h2 and p black in light mode, white in dark mode */
+.how_it_works-section h2,
+.counts-section h2,
+.review-section h2,
+.how_it_works-section p,
+.counts-section p,
+.review-section p {
+    color: #111;
+}
+.dark-mode .how_it_works-section h2,
+.dark-mode .counts-section h2,
+.dark-mode .review-section h2,
+.dark-mode .how_it_works-section p,
+.dark-mode .counts-section p,
+.dark-mode .review-section p {
+    color: #eee;
+}
 /* (Image Handling) */
 img { /* remove if buttons nested */
     -webkit-user-drag: none;
@@ -511,7 +539,7 @@ footer{
     gap:30px;
 }
 .count-card{
-    background:linear-gradient(145deg,#CCC,#c1c1c1);
+    background: white;
     border: 2px dotted rgba(255, 140, 0, 0.6);
     border-radius: 14px;
     padding:30px;
@@ -557,6 +585,7 @@ footer{
 }
 .review-stage {
     border: 2px dotted rgba(255, 140, 0, 0.6);
+    background: white;
     border-radius: 14px;
     padding: 25px;
     width: 100%;
