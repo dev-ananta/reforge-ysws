@@ -1,22 +1,5 @@
 /* GLOBAL */
-/* FONTS */
-/* Firlest
-@font-face {
-    font-family: 'Firlest';
-    src: url('fonts/Firlest-Regular.otf') format('woff'),
-         url('fonts/Firlest-Regular.ttf') format('truetype');
-    font-weight: normal;
-    font-style: normal;
-}
-
-h1 {
-    font-family: 'Firlest', serif;
-    font-size: 3rem;
-}
-
-.medieval-text {
-    font-family: 'Firlest';
-} */
+/* (Font) */
 @font-face {
   font-family: 'Phantom Sans';
   src:
@@ -32,7 +15,7 @@ h1 {
   font-weight: bold;
   font-display: swap;
 }
-/* RESET */
+/* (Reset) */
 *{
     margin:0;
     padding:0;
@@ -47,14 +30,30 @@ body{
     transition:.5s;
 }
 body::-webkit-scrollbar{display:none;}
-/* DARK MODE BASE */
+/* (Dark Mode) */
+#forgeToggle{
+    position:fixed;
+    bottom:25px;
+    left:25px;
+    width:55px;
+    height:55px;
+    border-radius:50%;
+    background:#222;
+    color:#fff;
+    font-size:26px;
+    cursor:pointer;
+    box-shadow:0 0 10px rgba(255,120,0,.6);
+    z-index:25;
+}
 .dark-mode{
     background:#0b0b0b;
     color:#eee;
 }
-/* DARK MODE EXTENSIONS */
 .dark-mode .navbar{
     background:black;
+    color:white;
+}
+.dark-mode .nav-buttons a{
     color:white;
 }
 .dark-mode footer{
@@ -64,17 +63,40 @@ body::-webkit-scrollbar{display:none;}
 .dark-mode .footer-links a{
     color:white;
 }
-.dark-mode .nav-buttons a{
+.dark-mode .partner-logo-light{
+    display:none;
+}
+.dark-mode .partner-logo-dark{
+    display:block;
+}
+/* [Index - Dark Mode] */
+.dark-mode .project-title{
+    color: white;
+}
+.dark-mode .subtitle{
+    color:#aaa;
+}
+.dark-mode .btn{
+    color: white;
+}
+.dark-mode .labels span{
+    color: white;
+}
+/* [About - Dark Mode] */
+.dark-mode .forge-step{background:#151515;color:white;}
+.dark-mode .count-card{background:#0f0f0f;}
+.dark-mode .review-stage{background:#111;}
+.dark-mode .count-card{
+    background:linear-gradient(145deg,#111,#1c1c1c);
     color:white;
 }
-/* DRAGGING */
+/* (Image Handling) */
 img { /* remove if buttons nested */
     -webkit-user-drag: none;
     user-select: none;
     pointer-events: none;
 }
-/* COMPONENTS */
-/* NAVBAR */
+/* (NavBar) */
 .navbar{
     display:flex;
     justify-content:space-between;
@@ -105,7 +127,7 @@ img { /* remove if buttons nested */
     background:#ff4d4d;
     box-shadow:0 0 8px rgba(255,80,0,.6);
 }
-/* BURGER */
+/* (Mobile + Burger)*/
 .burger{
     display:none;
     flex-direction:column;
@@ -117,7 +139,6 @@ img { /* remove if buttons nested */
     height:3px;
     background:white;
 }
-/* MOBILE */
 @media (max-width:768px){
     .nav-buttons{
         position:absolute;
@@ -134,7 +155,7 @@ img { /* remove if buttons nested */
     .nav-buttons.active{transform:translateX(0);}
     .burger{display:flex;}
 }
-/* FOOTER */
+/* (Footer) */
 footer{
     background:#CCC;
     color:black;
@@ -147,30 +168,24 @@ footer{
     max-width:900px;
     margin:auto;
     margin-bottom:25px;
+    position:relative;
+    height:120px;
 }
-.partner-logo{width:120px;}
+.partner-logo-light{
+    display:block;
+    width:120px;
+}
+.partner-logo-dark{
+    display:none;
+    width:120px;
+}
 .footer-links{text-align:center;}
 .footer-links a{
     margin:0 12px;
     color:black;
     text-decoration:none;
 }
-/* TOGGLE */
-#forgeToggle{
-    position:fixed;
-    bottom:25px;
-    left:25px;
-    width:55px;
-    height:55px;
-    border-radius:50%;
-    background:#222;
-    color:#fff;
-    font-size:26px;
-    cursor:pointer;
-    box-shadow:0 0 10px rgba(255,120,0,.6);
-    z-index:25;
-}
-/* PARTICLES */
+/* (Particles) */
 #embers,#sparks,#forgeFire{
     position:fixed;
     inset:0;
@@ -179,7 +194,7 @@ footer{
 #forgeFire{z-index:-3;}
 #embers{z-index:-2;}
 #sparks{z-index:10;}
-/* CUSTOM SWORD SCROLLBAR */
+/* (Sword Scrollbar) */
 #swordScroll{
     position:fixed;
     right:18px;
@@ -200,7 +215,6 @@ footer{
 #scrollSword {
     pointer-events: auto;
 }
-/* SCABBARD (FOOTER HOLDER) */
 #scrollScabbard{
     position:fixed;
     right:14px;
@@ -211,8 +225,9 @@ footer{
 #scrollScabbard img{
     height:140px;
 }
-/* INDEX PAGE */
-.hero{
+/* Index Page */
+/* (Landing) */
+.landing{
     height:600px;
     background:url("images/smithy.jpg") center/cover no-repeat;
     display:flex;
@@ -221,60 +236,33 @@ footer{
     text-align:center;
     position:relative;
 }
-.hero::after{
+.landing::after{
     content:"";
     position:absolute;
     inset:0;
     background:linear-gradient(to top, rgba(0,0,0,.7), transparent);
 }
-.hero-content{
+.landing-content{
     position:relative;
     z-index:2;
 }
 .project-title{
     font-size:52px;
-    color:white;
+    color:black;
     text-shadow:0 0 12px rgba(255,120,0,.5);
 }
-.subtitle{
-    color:#aaa;
+.subtitle{ /* [Also Used by FAQ] */
+    color:#111;
     margin-bottom:20px;
 }
-.labels span{
-    position: relative;
-    display: inline-block;
-    padding: 8px 18px;
-    margin: 6px;
-    border-radius: 999px;
-
-    font-weight: bold;
-    color: #fff;
-
-    background: linear-gradient(145deg, #ff7a00, #ffb347);
-
-    box-shadow:
-        0 0 6px rgba(255,140,0,0.6),
-        0 0 12px rgba(255,90,0,0.4),
-        inset 0 0 6px rgba(255,255,255,0.2);
-
-    transition: all 0.25s ease;
-}
-/* 🔥 Flicker glow on hover */
-.labels span:hover{
-    box-shadow:
-        0 0 10px rgba(255,140,0,0.9),
-        0 0 20px rgba(255,80,0,0.7),
-        0 0 30px rgba(255,60,0,0.5);
-    transform: translateY(-2px);
-}
-/* BUTTONS */
-.hero-btn{
+/* (Buttons + Labels) */
+.btn{
     position: relative;
     padding: 14px 30px;
     border: none;
     border-radius: 12px;
     font-weight: bold;
-    color: white;
+    color: black;
     cursor: pointer;
     background: linear-gradient(145deg, #0a3dff, #00cfff);
 
@@ -285,7 +273,7 @@ footer{
 
     transition: all 0.2s ease;
 }
-.hero-btn:hover{
+.btn:hover{
     transform:translateY(-3px);
     
     box-shadow:
@@ -294,14 +282,14 @@ footer{
         0 0 30px rgba(0,220,255,0.7),
         0 0 45px rgba(0,255,255,0.5);
 }
-.hero-btn:active{
+.btn:active{
     transform: translateY(4px);
 
     box-shadow:
         0 2px 0 #0729a6,
         0 0 8px rgba(0,140,255,0.5);
 }
-.hero-btn::after{
+.btn::after{
     content: "";
     position: absolute;
     inset: 0;
@@ -310,16 +298,43 @@ footer{
     opacity: 0.6;
     transition: opacity 0.3s;
 }
-.hero-btn:hover::after{
+.btn:hover::after{
     opacity: 1;
 }
-.hero-buttons{
+.buttons{
     margin-top: 50px;
     display: flex;
     justify-content: center;
     gap: 30px;
     flex-wrap: wrap;
 }
+.labels span{
+    position: relative;
+    display: inline-block;
+    padding: 8px 18px;
+    margin: 6px;
+    border-radius: 999px;
+
+    font-weight: bold;
+    color: #111;
+
+    background: linear-gradient(145deg, #ff7a00, #ffb347);
+
+    box-shadow:
+        0 0 6px rgba(255,140,0,0.6),
+        0 0 12px rgba(255,90,0,0.4),
+        inset 0 0 6px rgba(255,255,255,0.2);
+
+    transition: all 0.25s ease;
+}
+.labels span:hover{
+    box-shadow:
+        0 0 10px rgba(255,140,0,0.9),
+        0 0 20px rgba(255,80,0,0.7),
+        0 0 30px rgba(255,60,0,0.5);
+    transform: translateY(-2px);
+}
+/* (Process - Briefing) */
 .process{
     padding:80px 40px;
     background:
@@ -352,7 +367,8 @@ footer{
     width:140px;
     margin-bottom:15px;
 }
-/* ABOUT PAGE */
+/* Dashboard Page - N/A (Currently Uses Landing & Buttons from Index Page)*/
+/* About Page */
 .about-section{
     padding: 80px 10%;
     max-width:1100px;
@@ -387,6 +403,7 @@ footer{
 .count-card:hover {
     transform: translateY(-5px);
 }
+/* (How It Works) */
 .forge-steps{
     display:flex;
     flex-direction:column;
@@ -412,14 +429,6 @@ footer{
     grid-column: 3 / 4;
     justify-self: start;
 }
-@media (max-width:768px){
-    .row-top,
-    .row-bottom{
-        display:flex;
-        flex-direction:column;
-        align-items:center;
-    }
-}
 .forge-step{
     background:#f5f5f5;
     border: 2px dotted rgba(255, 140, 0, 0.6);
@@ -434,7 +443,7 @@ footer{
     transform:scale(1.05);
     box-shadow:0 20px 40px rgba(255,120,0,0.25);
 }
-/* PIN */
+/* [Nail] */
 .pin{
     position:absolute;
     top:-12px;
@@ -445,7 +454,7 @@ footer{
     background:radial-gradient(circle at 30% 30%, #bbb, #444);
     border-radius:50%;
 }
-/* COUNTS */
+/* (What Counts) */
 .counts-grid{
     display:grid;
     grid-template-columns:repeat(2,1fr);
@@ -464,7 +473,7 @@ footer{
     transform:translateY(-8px);
     box-shadow:0 0 20px rgba(255,120,0,0.3);
 }
-/* REVIEW */
+/* (Review Process) */
 .review {
     display: flex;
     flex-direction: column;
@@ -488,6 +497,7 @@ footer{
     box-shadow: 0 0 20px rgba(255, 120, 0, 0.15);
     pointer-events: none;
 }
+/* [Arrow] */
 .arrow{
     display:flex;
     align-items:center;
@@ -499,6 +509,15 @@ footer{
     color:#ff7a00;
     display:inline-block;
     animation:floatY 2s infinite;
+}
+/* (Configuration - About) */
+@media (max-width:768px){
+    .row-top,
+    .row-bottom{
+        display:flex;
+        flex-direction:column;
+        align-items:center;
+    }
 }
 @keyframes floatY{
     0%,100%{transform:translateY(0);}
@@ -524,15 +543,7 @@ footer{
     0%,100%{transform:translateX(0);}
     50%{transform:translateX(10px);}
 }
-/* DARK MODE ABOUT */
-.dark-mode .forge-step{background:#151515;color:white;}
-.dark-mode .count-card{background:#0f0f0f;}
-.dark-mode .review-stage{background:#111;}
-.dark-mode .count-card{
-    background:linear-gradient(145deg,#111,#1c1c1c);
-    color:white;
-}
-/* FAQ */
+/* FAQ Page */
 .faq-section{
     padding:80px 10%;
     max-width:1100px;
@@ -545,11 +556,6 @@ footer{
     gap:25px;
     margin-top:40px;
 }
-@media (min-width:769px){
-    .faq-grid{
-        grid-template-columns:1fr 1fr;
-    }
-}
 .faq-card{
     background:rgba(255,255,255,0.05);
     backdrop-filter:blur(8px);
@@ -558,7 +564,6 @@ footer{
     overflow:hidden;
     transition:.3s;
 }
-
 .faq-card:hover{
     box-shadow:0 0 20px rgba(255,120,0,0.25);
 }
@@ -601,4 +606,10 @@ footer{
 .faq-card.active .faq-icon::before{
     content:"🛠️";
     transform:rotate(180deg) scale(1.2);
+}
+/* (Configuration - FAQ) */
+@media (min-width:769px){
+    .faq-grid{
+        grid-template-columns:1fr 1fr;
+    }
 }
