@@ -288,3 +288,84 @@ faqCards.forEach(card => {
         card.classList.toggle("active");
     });
 });
+
+/* SWORD DIVIDER INFINITE SCROLL */
+const dividers = document.querySelectorAll(".sword-divider");
+
+dividers.forEach((divider) => {
+    const track = divider.querySelector(".track");
+    const scrolls = divider.querySelectorAll(".sword-divider-scroll");
+    const dividerImage = new Image();
+    let animationFrameId = null;
+    let position = 0;
+    const speed = 0.8;
+    let resetDistance = 0;
+    let frameOffset = 0;
+
+    function populateScrolls() {
+        const imageWidth = dividerImage.naturalWidth || dividerImage.width;
+
+        if (!imageWidth || scrolls.length === 0) {
+            return false;
+        }
+
+        const visibleWidth = divider.offsetWidth;
+        const imagesPerSegment = Math.max(2, Math.ceil(visibleWidth / imageWidth) + 11);
+        frameOffset = imageWidth;
+
+        scrolls.forEach((scrollDiv, index) => {
+            scrollDiv.innerHTML = "";
+            scrollDiv.style.display = index < 3 ? "flex" : "none";
+
+            for (let i = 0; i < imagesPerSegment; i++) {
+                const img = document.createElement("img");
+                img.src = dividerImage.src;
+                img.alt = "Sword Divider";
+                scrollDiv.appendChild(img);
+            }
+        });
+
+        resetDistance = (scrolls[0]?.scrollWidth || 0) / 2;
+        return true;
+    }
+
+    function animate() {
+        if (!resetDistance) {
+            animationFrameId = requestAnimationFrame(animate);
+            return;
+        }
+
+        position += speed;
+
+        if (position >= -(resetDistance - frameOffset)) {
+            position = -((resetDistance * 2) - frameOffset);
+        }
+
+        track.style.transform = `translateX(${position}px)`;
+        animationFrameId = requestAnimationFrame(animate);
+    }
+
+    function restartDivider() {
+        if (!populateScrolls()) {
+            return;
+        }
+
+        if (animationFrameId) {
+            cancelAnimationFrame(animationFrameId);
+        }
+
+        position = -((resetDistance * 2) - frameOffset);
+        track.style.transform = `translateX(${position}px)`;
+        animationFrameId = requestAnimationFrame(animate);
+    }
+
+    dividerImage.src = "images/SwordDivider.png";
+
+    if (dividerImage.complete) {
+        restartDivider();
+    } else {
+        dividerImage.addEventListener("load", restartDivider, { once: true });
+    }
+
+    window.addEventListener("resize", restartDivider);
+});

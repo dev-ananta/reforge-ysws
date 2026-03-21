@@ -717,6 +717,37 @@ footer{
     0%,100%{transform:translateX(0);}
     50%{transform:translateX(10px);}
 }
+/* (Sword Divider) */
+.sword-divider {
+    width: 100%;
+    overflow: hidden;
+    background: #FFF;
+    padding: 20px 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.dark-mode .sword-divider {
+    background: #111;
+}
+.track {
+    display: flex;
+    width: max-content;
+    gap: 0;
+    will-change: transform;
+}
+.sword-divider-scroll {
+    display: flex;
+    gap: 0;
+    flex: none;
+    align-items: center;
+}
+.sword-divider-scroll img {
+    height: 1.2em;
+    flex-shrink: 0;
+    pointer-events: none;
+    display: block;
+}
 /* FAQ Page */
 .faq-section{
     padding:80px 10%;
