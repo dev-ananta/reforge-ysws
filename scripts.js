@@ -273,23 +273,7 @@ if (forgeSteps.length > 0) {
     });
 }
 
-/* FAQ PAGE */
-
-const faqCards = document.querySelectorAll(".faq-card");
-
-faqCards.forEach(card => {
-    const question = card.querySelector(".faq-question");
-
-    question.addEventListener("click", () => {
-        faqCards.forEach(c => {
-            if (c !== card) c.classList.remove("active");
-        });
-
-        card.classList.toggle("active");
-    });
-});
-
-/* SWORD DIVIDER INFINITE SCROLL */
+// Divider
 const dividers = document.querySelectorAll(".sword-divider");
 
 dividers.forEach((divider) => {
@@ -368,4 +352,20 @@ dividers.forEach((divider) => {
     }
 
     window.addEventListener("resize", restartDivider);
+});
+
+/* FAQ PAGE */
+
+const faqCards = document.querySelectorAll(".faq-card");
+
+faqCards.forEach(card => {
+    const question = card.querySelector(".faq-question");
+
+    question.addEventListener("click", () => {
+        faqCards.forEach(c => {
+            if (c !== card) c.classList.remove("active");
+        });
+
+        card.classList.toggle("active");
+    });
 });
