@@ -132,6 +132,7 @@ img { /* remove if buttons nested */
     background:white;
     color:black;
     box-shadow:0 4px 10px rgba(0,0,0,.6);
+    flex-wrap:wrap;
 }
 .nav-left{
     display:flex;
@@ -160,14 +161,18 @@ img { /* remove if buttons nested */
     flex-direction:column;
     gap:5px;
     cursor:pointer;
-    z-index:30;
+    z-index:40;
+    margin-left:auto;
 }
 .burger span{
     width:25px;
     height:3px;
-    background:white;
+    background:#111;
     transition: all 0.3s ease;
     transform-origin: center;
+}
+.dark-mode .burger span{
+    background:white;
 }
 .burger.active span:nth-child(1){
     transform: translateY(8px) rotate(45deg);
@@ -179,24 +184,39 @@ img { /* remove if buttons nested */
     transform: translateY(-8px) rotate(-45deg);
 }
 @media (max-width:768px){
+    .navbar{
+        padding:15px 20px;
+    }
     .nav-buttons{
-        position:absolute;
-        top:100%;
-        left:0;
-        right:0;
-        background:black;
+        position:relative;
+        order:3;
+        flex-basis:100%;
+        max-height:0;
+        overflow:hidden;
+        background:#FFF;
         width:100%;
         flex-direction:column;
-        padding:20px;
-        transform:translateY(-100%);
-        transition:.3s;
+        padding:0;
+        transition:max-height 0.3s ease;
     }
 
-    .nav-buttons.active{transform:translateY(0);}
+    .dark-mode .nav-buttons{
+        background:black;
+    }
+
+    .nav-buttons.active{
+        max-height:500px;
+        padding:20px;
+    }
     .nav-buttons a {
         padding: 15px 20px;
         margin: 10px 0;
         display: block;
+        text-align: left;
+        color:black;
+    }
+    .dark-mode .nav-buttons a {
+        color:white;
     }
     .burger{display:flex;}
 }
