@@ -160,26 +160,44 @@ img { /* remove if buttons nested */
     flex-direction:column;
     gap:5px;
     cursor:pointer;
+    z-index:30;
 }
 .burger span{
     width:25px;
     height:3px;
     background:white;
+    transition: all 0.3s ease;
+    transform-origin: center;
+}
+.burger.active span:nth-child(1){
+    transform: translateY(8px) rotate(45deg);
+}
+.burger.active span:nth-child(2){
+    opacity: 0;
+}
+.burger.active span:nth-child(3){
+    transform: translateY(-8px) rotate(-45deg);
 }
 @media (max-width:768px){
     .nav-buttons{
         position:absolute;
-        top:70px;
+        top:100%;
+        left:0;
         right:0;
         background:black;
-        width:200px;
+        width:100%;
         flex-direction:column;
         padding:20px;
-        transform:translateX(100%);
+        transform:translateY(-100%);
         transition:.3s;
     }
 
-    .nav-buttons.active{transform:translateX(0);}
+    .nav-buttons.active{transform:translateY(0);}
+    .nav-buttons a {
+        padding: 15px 20px;
+        margin: 10px 0;
+        display: block;
+    }
     .burger{display:flex;}
 }
 /* (Footer) */
@@ -251,6 +269,13 @@ footer{
 }
 #scrollScabbard img{
     height:140px;
+}
+/* Hide sword scrollbar on mobile */
+@media (max-width:768px){
+    #swordScroll,
+    #scrollScabbard {
+        display:none;
+    }
 }
 /* Index Page */
 /* (Landing) */
@@ -446,12 +471,16 @@ footer{
     position:relative;
     flex-direction:column;
 
-    background:url("images/alley.png") center/cover no-repeat;
+    background:#FFF;
 }
 .how_it_works-section::before{
     content:"";
     position:absolute;
     inset:0;
+    display:none;
+}
+.dark-mode .how_it_works-section {
+    background: #111;
 }
 .how_it_works-section > *{
     position:relative;
@@ -483,7 +512,7 @@ footer{
     justify-self: start;
 }
 .forge-step{
-    background:#f5f5f5;
+    background:#FFF;
     border: 2px dotted rgba(255, 140, 0, 0.6);
     border-radius: 14px;
     padding:25px;
@@ -491,6 +520,10 @@ footer{
     box-shadow:0 10px 25px rgba(0,0,0,0.4);
     transition:.3s;
     position:relative;
+}
+.dark-mode .forge-step {
+    background: #1a1a1a;
+    color: white;
 }
 .forge-step:hover{
     transform:scale(1.05);
@@ -522,12 +555,16 @@ footer{
     position:relative;
     flex-direction:column;
 
-    background:url("images/storage.png") center/cover no-repeat;
+    background:#FFF;
 }
 .counts-section::before{
     content:"";
     position:absolute;
     inset:0;
+    display:none;
+}
+.dark-mode .counts-section {
+    background: #111;
 }
 .counts-section > *{
     position:relative;
@@ -539,13 +576,17 @@ footer{
     gap:30px;
 }
 .count-card{
-    background: white;
+    background: #FFF;
     border: 2px dotted rgba(255, 140, 0, 0.6);
     border-radius: 14px;
     padding:30px;
     border-radius:12px;
     color:black;
     transition:.3s;
+}
+.dark-mode .count-card {
+    background: #1a1a1a;
+    color: white;
 }
 .count-card:hover{
     transform:translateY(-8px);
@@ -566,12 +607,16 @@ footer{
     position:relative;
     flex-direction:column;
 
-    background:url("images/gems.png") center/cover no-repeat;
+    background:#FFF;
 }
 .review-section::before{
     content:"";
     position:absolute;
     inset:0;
+    display:none;
+}
+.dark-mode .review-section {
+    background: #111;
 }
 .review-section > *{
     position:relative;
@@ -585,13 +630,18 @@ footer{
 }
 .review-stage {
     border: 2px dotted rgba(255, 140, 0, 0.6);
-    background: white;
+    background: #FFF;
     border-radius: 14px;
     padding: 25px;
     width: 100%;
     max-width: 600px;
     text-align: center;
     position: relative;
+    color: black;
+}
+.dark-mode .review-stage {
+    background: #1a1a1a;
+    color: white;
 }
 .review-stage::before {
     content: "";
